@@ -497,7 +497,7 @@ class Cyanea private constructor(private val prefs: SharedPreferences) {
       editor.putInt(PREF_PRIMARY, color)
       val isDarkColor = ColorUtils.isDarkColor(color, LIGHT_ACTIONBAR_LUMINANCE_FACTOR)
       val menuIconColorRes = if (isDarkColor) R.color.cyanea_menu_icon_light else R.color.cyanea_menu_icon_dark
-      primaryDark(ColorUtils.darker(color, DEFAULT_DARKER_FACTOR))
+      primaryDark(color)
       primaryLight(ColorUtils.lighter(color, DEFAULT_LIGHTER_FACTOR))
       menuIconColor(res.getColor(menuIconColorRes))
       navigationBar(if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O || isDarkColor) color else Color.BLACK)
